@@ -5,7 +5,7 @@ this=`basename $(readlink -f $0)`
 function usage {
 	echo "usage: $this url component"
 	echo "	url        - the url to parse"
-	echo "	component  - any one of the following:proto, user, pass, port, host, path"
+	echo "	component  - any one of the following: proto, user, pass, port, host, path"
 	echo
 	exit 1
 }
