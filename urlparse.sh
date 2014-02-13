@@ -62,5 +62,4 @@ fi
 # extract the path (if any)
 path="`echo $url | grep / | cut -d/ -f2-`"
 
-
 echo "${!component}"
