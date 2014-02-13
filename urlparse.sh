@@ -38,6 +38,9 @@ proto="`echo $url | grep '://' | sed -e's,^\(.*://\).*,\1,g'`"
 # remove the protocol
 url=`echo $url | sed -e s,$proto,,g`
 
+# remove '://' from proto
+proto="`echo $proto | sed -e 's,://,,'`"
+
 # extract the user and password (if any)
 userpass="`echo $url | grep @ | cut -d@ -f1`"
 pass=`echo $userpass | grep : | cut -d: -f2`
