@@ -30,6 +30,10 @@ fi
 # Thank you http://stackoverflow.com/a/17287984
 
 # extract the protocol
+if [[ $(echo $url |grep '://') == "" ]]; then
+	echo "I expected url to contain '://', exiting..." && exit 1
+fi
+
 proto="`echo $url | grep '://' | sed -e's,^\(.*://\).*,\1,g'`"
 # remove the protocol
 url=`echo $url | sed -e s,$proto,,g`
