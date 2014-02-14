@@ -7,4 +7,3 @@ Todo:
 =====
 
 * Tests
-* Robust error handling
