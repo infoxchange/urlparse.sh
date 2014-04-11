@@ -11,7 +11,7 @@ function usage {
 }
 
 if [[ ( "$1" == "" ) || ( "$2" == "" ) ]]; then
-	usage
+	usage 1>&2
 fi
 
 url=$1
@@ -24,7 +24,7 @@ if [[ \
 	( "$component" != "port" ) && \
 	( "$component" != "proto") && \
 	( "$component" != "user" ) ]]; then
-	usage
+	usage 1>&2
 fi
 
 # Thank you http://stackoverflow.com/a/17287984
