@@ -43,11 +43,13 @@ proto="`echo $proto | sed -e 's,://,,'`"
 
 # extract the user and password (if any)
 userpass="`echo $url | grep @ | cut -d@ -f1`"
-pass=`echo $userpass | grep : | cut -d: -f2`
-if [ -n "$pass" ]; then
+if echo $userpass | grep -q :
+then
     user=`echo $userpass | grep : | cut -d: -f1`
+    pass=`echo $userpass | grep : | cut -d: -f2`
 else
     user=$userpass
+    pass=
 fi
 
 # extract the host -- updated
